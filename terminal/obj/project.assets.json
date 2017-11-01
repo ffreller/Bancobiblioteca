@@ -196,6 +196,29 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "dados/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "util": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/dados.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/dados.dll": {}
+        }
+      },
+      "util/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/util.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/util.dll": {}
+        }
       }
     }
   },
@@ -656,11 +679,23 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "dados/1.0.0": {
+      "type": "project",
+      "path": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj",
+      "msbuildProject": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj"
+    },
+    "util/1.0.0": {
+      "type": "project",
+      "path": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj",
+      "msbuildProject": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "dados >= 1.0.0",
+      "util >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -670,11 +705,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\terminal\\terminal.csproj",
+      "projectUniqueName": "C:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\terminal\\terminal.csproj",
       "projectName": "terminal",
-      "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\terminal\\terminal.csproj",
+      "projectPath": "C:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\terminal\\terminal.csproj",
       "packagesPath": "C:\\Users\\40809588897\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\terminal\\obj\\",
+      "outputPath": "C:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\terminal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -690,7 +725,14 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj": {
+              "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj"
+            },
+            "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj": {
+              "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -7,14 +7,41 @@
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "terminal/1.0.0": {
+        "dependencies": {
+          "dados": "1.0.0",
+          "util": "1.0.0"
+        },
         "runtime": {
           "terminal.dll": {}
+        }
+      },
+      "dados/1.0.0": {
+        "dependencies": {
+          "util": "1.0.0"
+        },
+        "runtime": {
+          "dados.dll": {}
+        }
+      },
+      "util/1.0.0": {
+        "runtime": {
+          "util.dll": {}
         }
       }
     }
   },
   "libraries": {
     "terminal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dados/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "util/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
