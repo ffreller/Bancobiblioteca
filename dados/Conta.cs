@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using dados;
 
 namespace dados //library
@@ -48,6 +49,30 @@ namespace dados //library
         {
             Console.WriteLine("Qual é teu CPF/CNPJ?");
             string cpfcnpj = Console.ReadLine();
+            StreamReader Leitor = new StreamReader("Cadastro.csv");
+            string[] array;
+            string linha;
+            bool achou = false;
+            do
+            {
+                linha = Leitor.ReadLine();
+                array = linha.Split(';');
+                if(array[1] == cpfcnpj)
+                {
+                    achou = true;
+                    break;
+                }
+            }
+            while(array[0] != null);
+            if(achou == true)
+                {
+                    saldo = Convert.ToDouble(array[5]);
+                    Console.WriteLine(saldo);
+                }
+            else
+                {
+                    Console.WriteLine("CPF Não Encontrado");
+                }
             return saldo;
         }
     
