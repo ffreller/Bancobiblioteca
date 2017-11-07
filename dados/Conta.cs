@@ -40,13 +40,15 @@ namespace dados //library
             Console.WriteLine("Qual é teu CPF/CNPJ?");
             string cpfcnpj = Console.ReadLine();
             StreamReader Leitor = new StreamReader("Cadastro.csv");
-            string[] array;
+            string[] array = {};
             string linha;
             bool achou = false;
             do
             {
                 linha = Leitor.ReadLine();
-                array = linha.Split(';');
+                if(linha != null)
+                    {array = linha.Split(';');}
+                else {opcao();}
                 if(array[1] == cpfcnpj)
                 {
                     achou = true;
@@ -63,6 +65,7 @@ namespace dados //library
             else
                 {
                     Console.WriteLine("CPF Não Encontrado");
+                    opcao();
                 }
                 
         }
@@ -72,13 +75,15 @@ namespace dados //library
             Console.WriteLine("Qual é teu CPF/CNPJ?");
             string cpfcnpj = Console.ReadLine();
             StreamReader Leitor = new StreamReader("Cadastro.csv");
-            string[] array;
+            string[] array = {};
             string linha;
             bool achou = false;
             do
             {
                 linha = Leitor.ReadLine();
-                array = linha.Split(';');
+                if(linha != null)
+                    {array = linha.Split(';');}
+                else {opcao();}
                 if(array[1] == cpfcnpj)
                 {
                     achou = true;
@@ -95,6 +100,7 @@ namespace dados //library
             else
                 {
                     Console.WriteLine("CPF Não Encontrado");
+                    opcao();
                 }
         }
 
@@ -103,29 +109,34 @@ namespace dados //library
             Console.WriteLine("Qual é teu CPF/CNPJ?");
             string cpfcnpj = Console.ReadLine();
             StreamReader Leitor = new StreamReader("Cadastro.csv");
-            string[] array;
+            string[] array = {};
             string linha;
             bool achou = false;
             do
             {
                 linha = Leitor.ReadLine();
-                array = linha.Split(';');
+                if(linha != null)
+                    {array = linha.Split(';');}
+                else{
+                    achou = false;
+                    break;
+                    }
                 if(array[1] == cpfcnpj)
                 {
                     achou = true;
                     break;
                 }
             }
-            while(array[0] != null);
+            while(linha != null);
             if(achou == true)
-                {
-                    saldo = Convert.ToDouble(array[5]);
-                    Console.WriteLine("Seu saldo é: " + saldo);
-                }
+            {
+                saldo = Convert.ToDouble(array[5]);
+                Console.WriteLine("Seu saldo é: " + saldo);
+            }
             else
-                {
-                    Console.WriteLine("CPF Não Encontrado");
-                }
+            {
+                Console.WriteLine("CPF Não Encontrado");
+            }
         }
     
     }
