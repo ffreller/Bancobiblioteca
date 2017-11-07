@@ -25,16 +25,6 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "util/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/util.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/util.dll": {}
-        }
       }
     }
   },
@@ -179,17 +169,11 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "util/1.0.0": {
-      "type": "project",
-      "path": "../util/util.csproj",
-      "msbuildProject": "../util/util.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.0",
-      "util >= 1.0.0"
+      "NETStandard.Library >= 2.0.0"
     ]
   },
   "packageFolders": {
@@ -199,11 +183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj",
-      "projectName": "dados",
-      "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj",
+      "projectUniqueName": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj",
+      "projectName": "util",
+      "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj",
       "packagesPath": "C:\\Users\\40809588897\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\obj\\",
+      "outputPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -219,11 +203,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {
-            "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj": {
-              "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

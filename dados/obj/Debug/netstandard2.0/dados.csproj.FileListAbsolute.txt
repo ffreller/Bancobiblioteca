@@ -1,0 +1,10 @@
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\bin\Debug\netstandard2.0\dados.deps.json
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\bin\Debug\netstandard2.0\dados.dll
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\bin\Debug\netstandard2.0\dados.pdb
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\obj\Debug\netstandard2.0\dados.csproj.CoreCompileInputs.cache
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\obj\Debug\netstandard2.0\dados.AssemblyInfoInputs.cache
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\obj\Debug\netstandard2.0\dados.AssemblyInfo.cs
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\obj\Debug\netstandard2.0\dados.dll
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\obj\Debug\netstandard2.0\dados.pdb
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\bin\Debug\netstandard2.0\util.dll
+c:\Users\40809588897\Desktop\Programar\Semana5\Bancobiblioteca\dados\bin\Debug\netstandard2.0\util.pdb
