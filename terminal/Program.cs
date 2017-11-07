@@ -10,7 +10,6 @@ namespace terminal
         static void Main(string[] args)
         {   
             string opcao1 = "";
-            StreamWriter cadastro = new StreamWriter ("Cadastro.csv", true);
             do
             {
                 Console.WriteLine("Digite a opção");
@@ -47,6 +46,6 @@ namespace terminal
                 }   
             }
             while(opcao1 != "4");
-        }
+        }   
     }
 }

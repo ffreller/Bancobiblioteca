@@ -682,13 +682,13 @@
     },
     "dados/1.0.0": {
       "type": "project",
-      "path": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj",
-      "msbuildProject": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj"
+      "path": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\dados\\dados.csproj",
+      "msbuildProject": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\dados\\dados.csproj"
     },
     "util/1.0.0": {
       "type": "project",
-      "path": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj",
-      "msbuildProject": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj"
+      "path": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\util\\util.csproj",
+      "msbuildProject": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\util\\util.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -705,11 +705,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\terminal\\terminal.csproj",
+      "projectUniqueName": "C:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\terminal\\terminal.csproj",
       "projectName": "terminal",
-      "projectPath": "C:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\terminal\\terminal.csproj",
+      "projectPath": "C:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\terminal\\terminal.csproj",
       "packagesPath": "C:\\Users\\40809588897\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\terminal\\obj\\",
+      "outputPath": "C:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\terminal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -726,11 +726,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj": {
-              "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\dados\\dados.csproj"
+            "c:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\dados\\dados.csproj": {
+              "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\dados\\dados.csproj"
             },
-            "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj": {
-              "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana5\\Bancobiblioteca\\util\\util.csproj"
+            "c:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\util\\util.csproj": {
+              "projectPath": "c:\\Users\\40809588897\\Desktop\\Programar\\Semana6\\Bancobiblioteca\\util\\util.csproj"
             }
           }
         }
