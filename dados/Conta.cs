@@ -53,7 +53,7 @@ namespace dados //library
                 case "2": Console.WriteLine("Quanto deseja depositar?");
                 string val = Console.ReadLine();
                 double valor2 = Convert.ToDouble(val);
-                Sacar(valor2);
+                Depositar(valor2);
                     break;
 
             }
