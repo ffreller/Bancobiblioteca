@@ -28,12 +28,8 @@ namespace dados{
                         {
                             Console.WriteLine("Digite seu nome:");
                             nome = Console.ReadLine();
-                            conta.banco();
-                            conta.agencia();
-                            conta.contacorrente();
-                            conta.saldo();
                         }
-                        while (doc.ValidarCPF(cpfcnpj) != true);     
+                        while (doc.ValidarCPF(cpfcnpj) != true);    
                         break;
                     case "2":
                         Console.WriteLine("Digite seu CNPJ");
@@ -43,10 +39,6 @@ namespace dados{
                         {
                             Console.WriteLine("Digite seu nome:");
                             nome = Console.ReadLine();
-                            conta.agencia ();
-                            conta.contacorrente();
-                            conta.saldo();
-
                         }
                         while(docc.ValidarCNPJ(cpfcnpj) != true);
                         break;
@@ -81,6 +73,10 @@ namespace dados{
                 ex.Cells[2,4].Value = conta.agencia();
                 ex.Cells[2,5].Value = conta.contacorrente();
                 ex.Cells[2,6].Value = conta.saldo();
+                Console.WriteLine("Número do banco: " +  ex.Cells[2,3].Value);
+                Console.WriteLine("Número da agência: " +  ex.Cells[2,4].Value);
+                Console.WriteLine("Conta Corrente: " +  ex.Cells[2,5].Value);
+                Console.WriteLine("Saldo: " +  ex.Cells[2,6].Value);
                 ex.ActiveWorkbook.SaveAs(@"C:\Users\40809588897\Desktop\Programar\Semana6\Bancobiblioteca\clientes.xls");
                 ex.Quit();
                 ex.Dispose();
@@ -101,6 +97,10 @@ namespace dados{
                 ex.Cells[contador,4].Value = conta.agencia();
                 ex.Cells[contador,5].Value = conta.contacorrente();
                 ex.Cells[contador,6].Value = conta.saldo();
+                Console.WriteLine("Número do banco: " +  ex.Cells[contador,3].Value);
+                Console.WriteLine("Número da agência: " +  ex.Cells[contador,4].Value);
+                Console.WriteLine("Conta Corrente: " +  ex.Cells[contador,5].Value);
+                Console.WriteLine("Saldo: " +  ex.Cells[contador,6].Value);
                 ex.ActiveWorkbook.Save();
                 ex.Quit();
                 ex.Dispose();
