@@ -1,16 +1,40 @@
 ﻿using System;
 using System.IO;
 using dados;
+using NetOffice.ExcelApi;
 
 namespace dados //library
 {
     public class Conta
     {
-        public int banco { get; set; }
-        public int agencia { get; set; }
-        public int contacorrente { get; set; }
-        public double saldo { get; set; }
+    public double banco ()
+    {
+        Random random = new Random();
+        return random.Next(10,99);
+    }
+
+    public double agencia ()
+    {
+        Random random = new Random();
+        return random.Next(1000,9999);
+    }
+
+    public double contacorrente ()
+    {
+        Random random = new Random();
+        return random.Next(1000,9999);
+    }
+
+    public double saldo ()
+    {
+        Random random = new Random();
+        return random.Next(100,9999);
+    }
         public double valor { get; set; }
+
+        Application ex = new Application();
+
+    
 
     public void opcao()
     {
@@ -39,104 +63,109 @@ namespace dados //library
         {
             Console.WriteLine("Qual é teu CPF/CNPJ?");
             string cpfcnpj = Console.ReadLine();
-            StreamReader Leitor = new StreamReader("Cadastro.csv");
-            string[] array = {};
-            string linha;
+            double cpfcnpj1 = Convert.ToDouble(cpfcnpj);
+            int contador = 1;
             bool achou = false;
+            ex.DisplayAlerts = false;
+            ex.Workbooks.Open(@"C:\Users\40809588897\Desktop\Programar\Semana6\Bancobiblioteca\clientes.xls");
             do
             {
-                linha = Leitor.ReadLine();
-                if(linha != null)
-                    {array = linha.Split(';');}
-                else {opcao();}
-                if(array[1] == cpfcnpj)
+                if (cpfcnpj1 == Convert.ToDouble(ex.Cells[contador,2].Value))
                 {
                     achou = true;
                     break;
                 }
+                contador += 1;
             }
-            while(array[0] != null);
+            while (ex.Cells[contador,1].Value != null);
             if(achou == true)
                 {
-                    saldo = Convert.ToDouble(array[5]);
-                    saldo -= valor;
-                    Console.WriteLine("Seu novo saldo é: " + saldo);
+                    double saldo1 = Convert.ToDouble(ex.Cells[contador,6].Value);
+                    saldo1 -= valor;
+                    ex.Cells[contador,6].Value = saldo1;
+                    ex.ActiveWorkbook.Save();
+                    ex.Quit();
+                    ex.Dispose();
+                    Console.WriteLine("Seu novo saldo é: " + saldo1);
                 }
             else
                 {
                     Console.WriteLine("CPF Não Encontrado");
+                    ex.Quit();
+                    ex.Dispose();
                     opcao();
-                }
-                
+                }                
         }
 
         public void Depositar(double valor)
         {
             Console.WriteLine("Qual é teu CPF/CNPJ?");
             string cpfcnpj = Console.ReadLine();
-            StreamReader Leitor = new StreamReader("Cadastro.csv");
-            string[] array = {};
-            string linha;
+            double cpfcnpj1 = Convert.ToDouble(cpfcnpj);
+            int contador = 1;
             bool achou = false;
+            ex.DisplayAlerts = false;
+            ex.Workbooks.Open(@"C:\Users\40809588897\Desktop\Programar\Semana6\Bancobiblioteca\clientes.xls");   
             do
             {
-                linha = Leitor.ReadLine();
-                if(linha != null)
-                    {array = linha.Split(';');}
-                else {opcao();}
-                if(array[1] == cpfcnpj)
+                if (cpfcnpj1 == Convert.ToDouble(ex.Cells[contador,2].Value))
                 {
                     achou = true;
                     break;
                 }
+                contador += 1;
             }
-            while(array[0] != null);
+            while (ex.Cells[contador,1].Value != null);
             if(achou == true)
-                {
-                    saldo = Convert.ToDouble(array[5]);
-                    saldo += valor;
-                    Console.WriteLine("Seu novo saldo é: " + saldo);
-                }
+            {
+                double saldo1 = Convert.ToDouble(ex.Cells[contador,6].Value);
+                saldo1 += valor;
+                ex.Cells[contador,6].Value = saldo1;
+                ex.ActiveWorkbook.Save();
+                ex.Quit();
+                ex.Dispose();
+                Console.WriteLine("Seu novo saldo é: " + saldo1);
+            }
             else
-                {
-                    Console.WriteLine("CPF Não Encontrado");
-                    opcao();
-                }
-        }
+            {
+                Console.WriteLine("CPF Não Encontrado");
+                ex.Quit();
+                ex.Dispose();
+                opcao();
+            } 
+        }                  
 
         public void Meusaldo()
         {
             Console.WriteLine("Qual é teu CPF/CNPJ?");
             string cpfcnpj = Console.ReadLine();
-            StreamReader Leitor = new StreamReader("Cadastro.csv");
-            string[] array = {};
-            string linha;
+            double cpfcnpj1 = Convert.ToDouble(cpfcnpj);
+            int contador = 1;
             bool achou = false;
+            ex.DisplayAlerts = false;
+            ex.Workbooks.Open(@"C:\Users\40809588897\Desktop\Programar\Semana6\Bancobiblioteca\clientes.xls");
             do
             {
-                linha = Leitor.ReadLine();
-                if(linha != null)
-                    {array = linha.Split(';');}
-                else{
-                    achou = false;
-                    break;
-                    }
-                if(array[1] == cpfcnpj)
+                if (cpfcnpj1 == Convert.ToDouble(ex.Cells[contador,2].Value))
                 {
                     achou = true;
                     break;
                 }
+                contador += 1;
             }
-            while(linha != null);
+            while (ex.Cells[contador,1].Value != null);
             if(achou == true)
             {
-                saldo = Convert.ToDouble(array[5]);
-                Console.WriteLine("Seu saldo é: " + saldo);
+                double saldo1 = Convert.ToDouble(ex.Cells[contador,6].Value);
+                Console.WriteLine("Seu saldo é: " + saldo1);
             }
             else
             {
                 Console.WriteLine("CPF Não Encontrado");
+                opcao();
             }
+            ex.Quit();
+            ex.Dispose(); 
         }
     
     }

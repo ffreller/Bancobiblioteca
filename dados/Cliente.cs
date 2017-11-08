@@ -2,17 +2,19 @@ using System;
 using util;
 using dados;
 using System.IO;
+using NetOffice.ExcelApi;
 
 namespace dados{
     public class Cliente{
         public void cadastrar()
-        {   
+        {
             string fisicajuridica = "";
             string cpf = "";
             string cnpj = "";
             string nome = "";
-            StreamWriter cadastro = new StreamWriter("Cadastro.csv", true);
+            Application ex = new Application();
             Conta conta = new Conta();
+            
             do
             {
                 Console.WriteLine("Pessoa física (1), pessoas juríridca (2)");
@@ -25,15 +27,12 @@ namespace dados{
                         Documento doc = new Documento();
                         do 
                         {
-                            
                             Console.WriteLine("Digite seu nome:");
                             nome = Console.ReadLine();
-                            conta.banco = 1234;
-                            conta.agencia = 9876;
-                            conta.contacorrente = 4567;
-                            conta.saldo = 300;
-                            cadastro.WriteLine(nome + ";" + cpf + ";" + conta.banco + ";" + conta.agencia + ";" + conta.contacorrente + ";" + conta.saldo + ";");
-                            cadastro.Close();
+                            conta.banco();
+                            conta.agencia();
+                            conta.contacorrente();
+                            conta.saldo();
                         }
                         while (doc.ValidarCPF(cpf) != true);     
                         break;
@@ -45,12 +44,9 @@ namespace dados{
                         {
                             Console.WriteLine("Digite seu nome:");
                             nome = Console.ReadLine();
-                            conta.banco = 1234;
-                            conta.agencia = 9876;
-                            conta.contacorrente = 4567;
-                            conta.saldo = 300;
-                            cadastro.WriteLine(nome + ";" + cnpj + ";" + conta.banco + ";" + conta.agencia + ";" + conta.contacorrente + ";" + conta.saldo + ";");
-                            cadastro.Close();
+                            conta.agencia ();
+                            conta.contacorrente();
+                            conta.saldo();
 
                         }
                         while(docc.ValidarCNPJ(cnpj) != true);
@@ -71,6 +67,39 @@ namespace dados{
                         } 
                         break;
                 }        
+             if(!File.Exists(@"C:\Users\40809588897\Desktop\Programar\Semana6\Bancobiblioteca\clientes.xls"))
+            {
+                ex.Workbooks.Add();
+                ex.Cells[1,1].Value = nome;
+                ex.Cells[1,2].Value = cpf;
+                ex.Cells[1,3].Value = conta.banco();
+                ex.Cells[1,4].Value = conta.agencia();
+                ex.Cells[1,5].Value = conta.contacorrente();
+                ex.Cells[1,6].Value = conta.saldo();
+                ex.ActiveWorkbook.SaveAs(@"C:\Users\40809588897\Desktop\Programar\Semana6\Bancobiblioteca\clientes.xls");
+                ex.Quit();
+                ex.Dispose();
+            }
+            else
+            {
+                ex.DisplayAlerts = false;
+                ex.Workbooks.Open(@"C:\Users\40809588897\Desktop\Programar\Semana6\Bancobiblioteca\clientes.xls");
+                int contador = 1;
+                do
+                {
+                    contador += 1;
+                } 
+                while (ex.Cells[contador,1].Value != null);
+                ex.Cells[contador,1].Value = nome;
+                ex.Cells[contador,2].Value = cpf;
+                ex.Cells[contador,3].Value = conta.banco();
+                ex.Cells[contador,4].Value = conta.agencia();
+                ex.Cells[contador,5].Value = conta.contacorrente();
+                ex.Cells[contador,6].Value = conta.saldo();
+                ex.ActiveWorkbook.Save();
+                ex.Quit();
+                ex.Dispose();
+            }
             }
             while(fisicajuridica != "1" && fisicajuridica != "2" && fisicajuridica != "3");
         }
