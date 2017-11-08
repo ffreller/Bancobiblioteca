@@ -9,8 +9,7 @@ namespace dados{
         public void cadastrar()
         {
             string fisicajuridica = "";
-            string cpf = "";
-            string cnpj = "";
+            string cpfcnpj = "";
             string nome = "";
             Application ex = new Application();
             Conta conta = new Conta();
@@ -23,7 +22,7 @@ namespace dados{
                 {
                     case "1":
                         Console.WriteLine("Digite seu CPF");
-                        cpf = Console.ReadLine();
+                        cpfcnpj = Console.ReadLine();
                         Documento doc = new Documento();
                         do 
                         {
@@ -34,11 +33,11 @@ namespace dados{
                             conta.contacorrente();
                             conta.saldo();
                         }
-                        while (doc.ValidarCPF(cpf) != true);     
+                        while (doc.ValidarCPF(cpfcnpj) != true);     
                         break;
                     case "2":
-                        Console.WriteLine("Digite seu CNPJF");
-                        cnpj = Console.ReadLine();
+                        Console.WriteLine("Digite seu CNPJ");
+                        cpfcnpj = Console.ReadLine();
                         Documento docc = new Documento();
                         do
                         {
@@ -49,7 +48,7 @@ namespace dados{
                             conta.saldo();
 
                         }
-                        while(docc.ValidarCNPJ(cnpj) != true);
+                        while(docc.ValidarCNPJ(cpfcnpj) != true);
                         break;
                     case "3":
                         Console.WriteLine("Deseja realmente sair(s ou n)");
@@ -70,12 +69,18 @@ namespace dados{
              if(!File.Exists(@"C:\Users\40809588897\Desktop\Programar\Semana6\Bancobiblioteca\clientes.xls"))
             {
                 ex.Workbooks.Add();
-                ex.Cells[1,1].Value = nome;
-                ex.Cells[1,2].Value = cpf;
-                ex.Cells[1,3].Value = conta.banco();
-                ex.Cells[1,4].Value = conta.agencia();
-                ex.Cells[1,5].Value = conta.contacorrente();
-                ex.Cells[1,6].Value = conta.saldo();
+                ex.Cells[1,1].Value = "Nome";
+                ex.Cells[1,2].Value = "CPF/CNPJ";
+                ex.Cells[1,3].Value = "Banco";
+                ex.Cells[1,4].Value = "Agência";
+                ex.Cells[1,5].Value = "Conta Corrente";
+                ex.Cells[1,6].Value = "Saldo";
+                ex.Cells[2,1].Value = nome;
+                ex.Cells[2,2].Value = cpfcnpj;
+                ex.Cells[2,3].Value = conta.banco();
+                ex.Cells[2,4].Value = conta.agencia();
+                ex.Cells[2,5].Value = conta.contacorrente();
+                ex.Cells[2,6].Value = conta.saldo();
                 ex.ActiveWorkbook.SaveAs(@"C:\Users\40809588897\Desktop\Programar\Semana6\Bancobiblioteca\clientes.xls");
                 ex.Quit();
                 ex.Dispose();
@@ -91,7 +96,7 @@ namespace dados{
                 } 
                 while (ex.Cells[contador,1].Value != null);
                 ex.Cells[contador,1].Value = nome;
-                ex.Cells[contador,2].Value = cpf;
+                ex.Cells[contador,2].Value = cpfcnpj;
                 ex.Cells[contador,3].Value = conta.banco();
                 ex.Cells[contador,4].Value = conta.agencia();
                 ex.Cells[contador,5].Value = conta.contacorrente();
